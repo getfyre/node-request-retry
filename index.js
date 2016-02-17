@@ -115,7 +115,7 @@ Request.prototype.abort = function () {
 };
 
 // expose request methods from RequestRetry
-['end', 'on', 'emit', 'once', 'setMaxListeners', 'start', 'removeListener', 'pipe', 'write'].forEach(function (requestMethod) {
+['end', 'on', 'emit', 'once', 'setMaxListeners', 'start', 'removeListener', 'pipe', 'write','put','patch','post','head','del','get','cookie','jar'].forEach(function (requestMethod) {
   Request.prototype[requestMethod] = function exposedRequestMethod () {
     return this._req[requestMethod].apply(this._req, arguments);
   };
